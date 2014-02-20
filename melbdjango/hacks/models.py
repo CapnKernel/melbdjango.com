@@ -20,6 +20,9 @@ class Idea(models.Model):
 
     objects = IdeaManager()
 
+    def __unicode__(self):
+        return self.title
+
     @models.permalink
     def get_absolute_url(self):
         return ('idea-detail', (), {'idea_id': self.pk})
